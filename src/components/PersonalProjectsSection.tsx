@@ -1,6 +1,7 @@
 
-import { MessageSquare, ArrowUp, ExternalLink } from 'lucide-react';
+import { MessageSquare, ArrowUp, ExternalLink, Code } from 'lucide-react';
 import { Button } from './ui/button';
+import { Badge } from './ui/badge';
 
 type Project = {
   title: string;
@@ -9,6 +10,8 @@ type Project = {
   image: string;
   link: string;
   tags: string[];
+  technologies?: string[];
+  status?: string;
 };
 
 type PersonalProjectsSectionProps = {
@@ -53,7 +56,12 @@ const PersonalProjectsSection = ({ projects }: PersonalProjectsSectionProps) => 
                   <div className="flex flex-col h-full">
                     <div>
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-white font-semibold text-2xl">{project.title}</h3>
+                        <div className="flex items-center gap-3">
+                          <h3 className="text-white font-semibold text-2xl">{project.title}</h3>
+                          {project.status && (
+                            <Badge className="bg-resume-primary text-white">{project.status}</Badge>
+                          )}
+                        </div>
                         <a 
                           href={`https://${project.link}`} 
                           target="_blank" 
@@ -78,6 +86,26 @@ const PersonalProjectsSection = ({ projects }: PersonalProjectsSectionProps) => 
                           </span>
                         ))}
                       </div>
+
+                      {project.technologies && (
+                        <div className="mb-4">
+                          <div className="flex items-center gap-2 mb-2 text-resume-primary">
+                            <Code className="w-4 h-4" />
+                            <span className="text-sm font-medium">Technologies</span>
+                          </div>
+                          <div className="flex flex-wrap gap-2">
+                            {project.technologies.map((tech, idx) => (
+                              <Badge 
+                                key={idx} 
+                                variant="outline" 
+                                className="border-resume-primary/30 text-gray-300"
+                              >
+                                {tech}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                      )}
 
                       <div className="flex items-center gap-4 text-gray-400">
                         <div className="flex items-center gap-2">

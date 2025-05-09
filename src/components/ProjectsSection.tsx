@@ -1,6 +1,7 @@
 
-import { ExternalLink, Eye } from 'lucide-react';
+import { ExternalLink, Eye, Code } from 'lucide-react';
 import { Button } from './ui/button';
+import { Badge } from './ui/badge';
 
 type Project = {
   title: string;
@@ -8,6 +9,8 @@ type Project = {
   description: string;
   image: string;
   link: string;
+  technologies?: string[];
+  status?: string;
 };
 
 type ProjectsSectionProps = {
@@ -46,11 +49,32 @@ const ProjectsSection = ({ projects }: ProjectsSectionProps) => {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-white font-semibold text-lg mb-1">{project.title}</h3>
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="text-white font-semibold text-lg">{project.title}</h3>
+                  {project.status && (
+                    <Badge className="bg-resume-secondary text-white text-xs">{project.status}</Badge>
+                  )}
+                </div>
                 <p className="text-resume-primary text-sm line-clamp-1 mb-3">{project.subtitle}</p>
                 <p className="text-gray-300 text-sm mb-4 line-clamp-2">{project.description}</p>
                 
-                <div className="flex justify-between items-center">
+                {project.technologies && (
+                  <div className="mb-4">
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.technologies.map((tech, idx) => (
+                        <Badge 
+                          key={idx} 
+                          variant="outline" 
+                          className="border-resume-primary/20 text-gray-300 text-xs"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                
+                <div className="flex justify-between items-center mt-2">
                   <a 
                     href={project.link} 
                     target="_blank" 

@@ -6,7 +6,7 @@ import EducationSection from "../components/EducationSection";
 import SkillsSection from "../components/SkillsSection";
 import CertificationsSection from "../components/CertificationsSection";
 import PersonalProjectsSection from "../components/PersonalProjectsSection";
-import { ArrowTopRightIcon } from "lucide-react";
+import { Code } from "lucide-react";
 
 const Resume = () => {
   // Data
@@ -77,6 +77,8 @@ const Resume = () => {
       description: "A comprehensive HRIS management system with multiple modules for employee management and HR operations.",
       image: "/placeholder.svg",
       link: "hris.filgro.com",
+      technologies: ["React", "Laravel", "MySQL", "Tailwind CSS"],
+      status: "Completed"
     },
     {
       title: "Leasing Management Software",
@@ -84,6 +86,8 @@ const Resume = () => {
       description: "Advanced leasing management platform for property management companies and landlords.",
       image: "/placeholder.svg",
       link: "www.spekapps.com",
+      technologies: ["React", "Node.js", "MongoDB", "Material UI"],
+      status: "Ongoing"
     },
     {
       title: "Shopify Website",
@@ -91,6 +95,8 @@ const Resume = () => {
       description: "Custom Shopify implementation with specialized checkout flow and product pages.",
       image: "/placeholder.svg",
       link: "sway-co.com",
+      technologies: ["Shopify", "Liquid", "JavaScript", "CSS"],
+      status: "Deployed"
     },
     {
       title: "Shopify Website",
@@ -98,6 +104,8 @@ const Resume = () => {
       description: "Another Shopify implementation with similar custom features but for a different client.",
       image: "/placeholder.svg",
       link: "solo-inc.com",
+      technologies: ["Shopify", "Liquid", "JavaScript", "CSS"],
+      status: "Deployed"
     },
   ];
 
@@ -108,7 +116,9 @@ const Resume = () => {
       description: "A community-driven platform featuring over 20,000 practice questions across different categories and professional exams. Users can answer questions, add comments, reply to discussions, and upvote helpful content — all completely free with no ads.",
       image: "/placeholder.svg",
       link: "examrefresher.com",
-      tags: ["Community Platform", "Educational", "Free Resource", "Interactive"]
+      tags: ["Community Platform", "Educational", "Free Resource", "Interactive"],
+      technologies: ["React", "Node.js", "Express", "MongoDB", "AWS", "Tailwind CSS"],
+      status: "Active Development"
     }
   ];
 
