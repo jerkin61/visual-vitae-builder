@@ -1,5 +1,5 @@
 
-import { BriefCase } from 'lucide-react';
+import { Briefcase } from 'lucide-react';
 
 type Experience = {
   period: string;
