@@ -1,4 +1,3 @@
-
 import Header from "../components/Header";
 import SummarySection from "../components/SummarySection";
 import ExperienceSection from "../components/ExperienceSection";
@@ -6,6 +5,7 @@ import ProjectsSection from "../components/ProjectsSection";
 import EducationSection from "../components/EducationSection";
 import SkillsSection from "../components/SkillsSection";
 import CertificationsSection from "../components/CertificationsSection";
+import PersonalProjectsSection from "../components/PersonalProjectsSection";
 import { ArrowTopRightIcon } from "lucide-react";
 
 const Resume = () => {
@@ -101,6 +101,17 @@ const Resume = () => {
     },
   ];
 
+  const personalProjects = [
+    {
+      title: "ExamRefresher.com",
+      subtitle: "Free exam practice platform for professionals and students",
+      description: "A community-driven platform featuring over 20,000 practice questions across different categories and professional exams. Users can answer questions, add comments, reply to discussions, and upvote helpful content — all completely free with no ads.",
+      image: "/placeholder.svg",
+      link: "examrefresher.com",
+      tags: ["Community Platform", "Educational", "Free Resource", "Interactive"]
+    }
+  ];
+
   const educations = [
     {
       school: "University of Science and Technology in Southern Philippines",
@@ -162,6 +173,7 @@ const Resume = () => {
         <SummarySection summary={summary} />
         <SkillsSection skills={skills} />
         <ExperienceSection experiences={experiences} />
+        <PersonalProjectsSection projects={personalProjects} />
         <ProjectsSection projects={projects} />
         <EducationSection educations={educations} />
         <CertificationsSection certifications={certifications} />
