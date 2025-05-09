@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -98,4 +99,35 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.section-title {
+  @apply flex items-center gap-2 text-xl font-semibold mb-6 text-white;
+}
+
+.section-title::before {
+  content: "";
+  @apply w-2 h-2 rounded-full bg-resume-primary;
+}
+
+.timeline-item {
+  @apply relative pl-8 pb-8;
+}
+
+.timeline-item::before {
+  content: "";
+  @apply absolute left-0 top-1.5 w-3 h-3 rounded-full bg-resume-primary;
+}
+
+.timeline-item::after {
+  content: "";
+  @apply absolute left-1.5 top-3 w-0.5 h-full bg-resume-primary/30;
+}
+
+.timeline-item:last-child::after {
+  @apply hidden;
+}
+
+.skill-pill {
+  @apply px-4 py-2 rounded-full bg-resume-secondary/20 text-white;
 }
