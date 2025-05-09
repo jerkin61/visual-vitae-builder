@@ -24,6 +24,16 @@ const ProjectsSection = ({ projects }: ProjectsSectionProps) => {
         <h2 className="section-title">
           Portfolio
         </h2>
+        
+        <div className="flex justify-between items-center mb-6">
+          <p className="text-gray-300 text-sm">Showcasing selected client projects</p>
+          <a 
+            href="/portfolio" 
+            className="text-resume-primary hover:underline text-sm flex items-center gap-1"
+          >
+            View all projects <ExternalLink className="w-3.5 h-3.5" />
+          </a>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
